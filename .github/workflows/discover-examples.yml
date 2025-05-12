@@ -4,7 +4,7 @@ on: [pull_request, workflow_dispatch, push]
 
 env:
   API_HOST: apps.itz-92p0sb.hub01-lb.techzone.ibm.com
-  PLATFORM_API_PREFIX: apim-demo-mgmt-api-manager-tools
+  PLATFORM_API_PREFIX: apim-demo-mgmt-api-platform-api-tools
   PROVIDER_ORG: cp4i-demo-org
   INSECURE_SKIP_TLS_VERIFY: True
   #API_FILES: <file/files name>
