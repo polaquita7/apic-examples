@@ -27,7 +27,7 @@ jobs:
         provider_org: ${{ env.PROVIDER_ORG }}
         insecure_skip_tls_verify: ${{ env.INSECURE_SKIP_TLS_VERIFY }}
         api_key: ${{ secrets.apicApikey }}
-        #api_files: ${{ env.API_FILES }}
+        api_files: ${{ env.API_FILES }}
         api_folders: ${{ env.API_FOLDERS }}
         resync_check: ${{ true }}
         git_diff: ${{ steps.difference-output.outputs.action_updates }}
