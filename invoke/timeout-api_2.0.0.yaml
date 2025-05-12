@@ -1,0 +1,74 @@
+swagger: '2.0'
+info:
+  version: 2.0.0
+  title: timeout API
+  x-ibm-name: timeout-api
+basePath: /timeout-api
+x-ibm-configuration:
+  properties:
+    target-url:
+      value: >-
+        https://env506708.int-aws-us.webmethods.io/runflow/run/sync/v2/2SWPW1R0XY
+      description: URL of the proxy policy
+      encoded: false
+  cors:
+    enabled: true
+  gateway: datapower-api-gateway
+  type: rest
+  phase: realized
+  enforced: true
+  testable: true
+  assembly:
+    execute:
+      - set-variable:
+          version: 2.0.0
+          title: set-webhook-key
+          actions:
+            - set: message.headers.webhook_key
+              value: 1c979c220ae75244b00ccc6b1742416401994
+              type: string
+      - invoke:
+          title: invoke
+          version: 2.0.0
+          verb: POST
+          target-url: $(target-url)
+          follow-redirects: false
+          parameter-control:
+            type: allowlist
+            values: []
+          header-control:
+            type: allowlist
+            values:
+              - ^webhook_key$
+          inject-proxy-headers: true
+          persistent-connection: true
+          chunked-uploads: true
+          backend-type: detect
+          graphql-send-type: detect
+          timeout: 2
+    catch: []
+  activity-log:
+    enabled: true
+    success-content: activity
+    error-content: payload
+paths:
+  /:
+    get:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+    post:
+      responses:
+        '200':
+          description: success
+          schema:
+            type: string
+      consumes: []
+      produces: []
+securityDefinitions: {}
+schemes:
+  - https
