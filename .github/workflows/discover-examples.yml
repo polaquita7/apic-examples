@@ -4,11 +4,11 @@ on: [pull_request, workflow_dispatch, push]
 
 env:
   API_HOST: apps.itz-92p0sb.hub01-lb.techzone.ibm.com
-  PLATFORM_API_PREFIX: apim-demo-mgmt-api-platform-api-tools
+  PLATFORM_API_PREFIX: apim-demo-mgmt-platform-api-tools
   PROVIDER_ORG: cp4i-demo-org
   INSECURE_SKIP_TLS_VERIFY: True
-  API_FILES: invoke/invoke_1.0.0.yaml
-  #API_FOLDERS: z-os-connect,invoke,json-to-xml,redaction
+  #API_FILES: invoke/invoke_1.0.0.yaml
+  API_FOLDERS: z-os-connect,invoke,json-to-xml,redaction
 
 jobs:
   run-discovery:
@@ -27,7 +27,7 @@ jobs:
         provider_org: ${{ env.PROVIDER_ORG }}
         insecure_skip_tls_verify: ${{ env.INSECURE_SKIP_TLS_VERIFY }}
         api_key: ${{ secrets.apicApikey }}
-        api_files: ${{ env.API_FILES }}
+        #api_files: ${{ env.API_FILES }}
         api_folders: ${{ env.API_FOLDERS }}
         resync_check: ${{ true }}
         git_diff: ${{ steps.difference-output.outputs.action_updates }}
