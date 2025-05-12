@@ -6,7 +6,7 @@ env:
   API_HOST: apps.itz-92p0sb.hub01-lb.techzone.ibm.com
   PLATFORM_API_PREFIX: apim-demo-mgmt-api-manager-tools
   PROVIDER_ORG: cp4i-demo-org
-  #INSECURE_SKIP_TLS_VERIFY: True
+  INSECURE_SKIP_TLS_VERIFY: True
   #API_FILES: <file/files name>
   API_FOLDERS: z-os-connect,invoke,json-to-xml,redaction
 
