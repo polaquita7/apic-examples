@@ -3,7 +3,7 @@ info:
   version: 1.0.0
   title: invoke
   x-ibm-name: invoke
-  description: Llamado a un endpoint público
+  description: Llamado a un endpoint público (JSONplaceholder)
 basePath: /invoke
 x-ibm-configuration:
   properties:
